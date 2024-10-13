@@ -1,0 +1,527 @@
+/* General Header Styles */
+.site-header {
+    position: relative; /* Changed to relative for scrolling */
+    top: 0;
+    width: 100%;
+    background-color: #2d8cb1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Adjusted for large screens */
+    align-items: center;
+    padding: 20px;
+    position: relative; /* For positioning the menu */
+}
+
+/* Hamburger Menu Icon */
+.menu-btn {
+    display: none; /* Hidden on larger screens */
+    position: absolute;
+    left: 10px; /* Fixed on the left side */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1100; /* Ensures the icon appears above other elements */
+}
+
+.hamburger-icon {
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.hamburger-icon span {
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Logo or Title Styling */
+.logo {
+    flex-grow: 1;
+    text-align: center; /* Center the logo on small screens */
+}
+
+.logo a {
+    font-size: 22px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #80cbc4;
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+    display: block; /* Show by default on large screens */
+    background-color: #2d8cb1;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #80cbc4;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: center; /* Center logo on small screens */
+    }
+
+    .menu-btn {
+        display: block; /* Show hamburger icon on small screens */
+    }
+
+    .nav-menu {
+        display: none; /* Initially hide the menu */
+        position: absolute;
+        top: 60px; /* Positioned below the header */
+        left: 0;
+        width: 100%;
+        background-color: #2d8cb1;
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: block; /* Show menu when toggled */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0; /* Space between menu items */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        padding: 10px;
+    }
+}
+
+
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+/* Main Content Styles */
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 900px;
+    margin-top: 10px; /* Add margin equal to the header height */
+    flex: 1; /* Allow main content to grow and take available space */
+}
+
+/* Heading Styles */
+h1 {
+    margin-top: 10px;
+    font-size: 2rem; /* Updated font size for H1 */
+    color: #0a9c53; /* Updated color for H1 */
+    margin-bottom: 10px; /* Space below H1 */
+    text-align: left; 
+}
+
+/* Input Section Styles */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+input[type="number"],
+input[type="date"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.2);
+    outline: none;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+input[type="radio"] + label {
+    font-size: 1rem;
+    color: #555;
+}
+
+input[type="radio"]:checked + label {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.time-inputs {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.time-inputs input[type="number"] {
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.time-inputs input[type="number"]:focus {
+    border-color: #007bff;
+    background: #fff;
+    outline: none;
+}
+
+#dateInput, #periodInput {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .input-section {
+        padding: 15px;
+    }
+    
+    .input-group {
+        gap: 6px;
+    }
+    
+    label {
+        font-size: 1rem;
+    }
+    
+    input[type="number"],
+    input[type="date"] {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    
+    .time-inputs input[type="number"] {
+        width: 70px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Button Container */
+.button-container {
+    display: flex;                /* Display buttons in one row */
+    justify-content: flex-start;   /* Align buttons to the left side */
+    gap: 15px;                    /* Space between the buttons */
+    margin-top: 10px;             /* Space above the button container */
+}
+
+/* Base Button Styles */
+button {
+    border: none;                 /* Remove default border */
+    border-radius: 8px;           /* Consistent border-radius for both buttons */
+    padding: 12px 24px;           /* Padding for button size */
+    font-size: 1rem;              /* Font size */
+    cursor: pointer;              /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Calculate Button */
+.calculate-btn {
+    background-color: #4CAF50;    /* Green background for Calculate */
+    color: #fff;                  /* White text color */
+}
+
+/* Hover state for Calculate Button */
+.calculate-btn:hover {
+    background-color: #45a049;    /* Darker green on hover */
+    transform: scale(1.05);       /* Slightly enlarge the button on hover */
+}
+
+/* Active state for Calculate Button */
+.calculate-btn:active {
+    background-color: #388e3c;    /* Even darker green on click */
+    transform: scale(0.98);       /* Slightly shrink the button on click */
+}
+
+/* Clear Button */
+.clear-btn {
+    background-color: #f44336;    /* Red background for Clear */
+    color: #fff;                  /* White text color */
+}
+
+/* Hover state for Clear Button */
+.clear-btn:hover {
+    background-color: #e53935;    /* Darker red on hover */
+    transform: scale(1.05);       /* Slightly enlarge the button on hover */
+}
+
+/* Active state for Clear Button */
+.clear-btn:active {
+    background-color: #c62828;    /* Even darker red on click */
+    transform: scale(0.98);       /* Slightly shrink the button on click */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: row;     /* Keep buttons in one row on small screens */
+        justify-content: flex-start;
+        gap: 10px;               /* Slightly reduce gap between buttons */
+    }
+
+    button {
+        padding: 10px 20px;      /* Adjust padding for smaller screens */
+        font-size: 0.9rem;       /* Slightly smaller font size for smaller screens */
+    }
+}
+
+/* Result Section */
+.result-section {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #f0f4f8; /* Light grey-blue background for the section */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted effect */
+}
+
+.result-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #ffffff; /* White text for better contrast */
+    background-color: #007bff; /* Unique blue background for the header */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: left; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.result-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.result-table td:first-child {
+    font-weight: bold;
+    background-color: #e9ecef; /* Light grey background for labels */
+    color: #495057; /* Dark grey for text */
+}
+
+.result-table td:last-child {
+    text-align: left;
+    color: #343a40; /* Darker grey for value text */
+}
+
+.result-table tr:nth-child(even) td {
+    background-color: #f8f9fa; /* Alternate row color for readability */
+}
+
+.result-table tr:hover td {
+    background-color: #e2e6ea; /* Highlight row on hover */
+}
+
+
+/* Chart Styles */
+.result-chart-container {
+    margin-top: 20px;
+    width: 100%; /* Full width container */
+    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    height: auto; /* Responsive height based on content */
+    display: flex;
+    justify-content: flex-start; /* Align the chart to the left */
+}
+
+canvas {
+    width: 100% !important; /* The canvas takes up full width */
+    height: auto !important; /* Let the height adjust proportionally */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .calculate-btn {
+        font-size: 1rem;
+    }
+
+    .input-section {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-group,
+    .time-inputs {
+        flex-direction: column;
+    }
+
+    .calculate-btn {
+        padding: 8px;
+        font-size: 1rem;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text for readability */
+    padding: 20px 0; /* Top and bottom padding */
+    text-align: center; /* Center align text */
+    width: 100%; /* Full width */
+    position: relative; /* Relative positioning */
+    margin-top: 20px; 
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center align items horizontally */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center content */
+    padding: 20px; /* Padding around content */
+}
+
+.footer-content span {
+    margin: 0 15px; /* Horizontal space between each link */
+    display: inline-block; /* Make each span an inline block */
+}
+
+.footer-content a {
+    color: #fff; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 14px; /* Font size for links */
+    padding: 10px 15px; /* Padding around links */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.footer-content a:hover {
+    color: #1E90FF; /* Bright hover color for links */
+}
+
+.footer-content p {
+    margin-top: 20px; /* Space above the copyright text */
+    font-size: 14px; /* Font size for the copyright text */
+    color: #969595; /* Light grey color for the bottom text */
+    width: 100%; /* Full width to center the text */
+    text-align: center; /* Center the copyright text */
+    border-top: 1px solid #444; /* Border to separate content */
+    padding-top: 10px; /* Padding above the bottom text */
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center-align items */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .footer-content span {
+        margin-bottom: 10px; /* Space between links on smaller screens */
+    }
+
+    .footer-content p {
+        margin-top: 15px; /* Reduce margin on smaller screens */
+        font-size: 13px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content a {
+        font-size: 13px; /* Smaller font size for very small screens */
+        padding: 8px 12px; /* Adjust padding for small screens */
+    }
+
+    .footer-content p {
+        font-size: 12px; /* Smaller font size for copyright on very small screens */
+    }
+}

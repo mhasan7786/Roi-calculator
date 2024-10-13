@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return on Investment (ROI) Calculator</title>
+    <link rel="stylesheet" href="roi-calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+
+            <!-- Hamburger Menu Button for Mobile -->
+            <div class="menu-btn" onclick="toggleMenu()">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Logo or Main Title -->
+            <div class="logo">
+                <a href="index.html">Invest Calculator</a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="inde.html">Home</a></li>
+                    <li><a href="roi-calcuor.html">ROI Calculator</a></li>
+                    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    <li><a href="savings-calculator.html">Savings Calculator</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.querySelector('.menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+
+            menuBtn.addEventListener('click', function () {
+                navMenu.classList.toggle('show'); // Toggle 'show' class on click
+            });
+        });
+    </script>
+
+    <main>
+        <h1>Return on Investment (ROI) Calculator</h1>
+        <!-- Investment Inputs -->
+        <div class="input-section">
+            <div class="input-group">
+                <label for="initialInvestment">Initial Investment ($):</label>
+                <input type="number" id="initialInvestment" placeholder="Enter amount" value="10000">
+            </div>
+
+            <div class="input-group">
+                <label for="finalValue">Final Value ($):</label>
+                <input type="number" id="finalValue" placeholder="Enter amount" value="20000">
+            </div>
+
+            <div class="input-group">
+                <label for="additionalCosts">Additional Costs ($):</label>
+                <input type="number" id="additionalCosts" placeholder="Enter amount (optional)" value="500">
+            </div>
+
+            <!-- Investment Period Inputs -->
+            <div class="input-group">
+                <label>Investment Period:</label>
+                <div>
+                    <input type="radio" id="useDates" name="timeSelection" value="dates" checked>
+                    <label for="useDates">Use Dates</label>
+                    <input type="radio" id="usePeriod" name="timeSelection" value="period">
+                    <label for="usePeriod">Use Period</label>
+                </div>
+            </div>
+
+            <!-- Input Fields for Date Selection -->
+            <div id="dateInput">
+                <div class="input-group">
+                    <label for="startDate">From:</label>
+                    <input type="date" id="startDate">
+                </div>
+                <div class="input-group">
+                    <label for="endDate">To:</label>
+                    <input type="date" id="endDate">
+                </div>
+            </div>
+
+            <!-- Input Fields for Time Period -->
+            <div id="periodInput" style="display: none;">
+                <div class="time-inputs">
+                    <input type="number" id="years" placeholder="Years" min="0" value="2">
+                    <input type="number" id="months" placeholder="Months" min="0" max="11" value="4">
+                    <input type="number" id="days" placeholder="Days" min="0" max="30" value="8">
+                </div>
+            </div>
+
+            <!-- Calculate and Clear Buttons -->
+            <div class="button-container">
+                <button class="calculate-btn" onclick="calculateROI()">Calculate</button>
+                <button class="clear-btn" onclick="clearInputs()">Clear</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="result" class="result-section">
+                <h2>Results</h2>
+                <table class="result-table">
+                    <tbody>
+                        <tr>
+                            <td>Net Returns (Profit)</td>
+                            <td>$9500.00</td>
+                        </tr>
+                        <tr>
+                            <td>ROI</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr>
+                            <td>Annualized ROI</td>
+                            <td>17.26%</td>
+                        </tr>
+                        <tr>
+                            <td>Investment Period Length (Decimal)</td>
+                            <td>1.00 years</td>
+                        </tr>
+                        <tr>
+                            <td>Investment Period Length (Detailed)</td>
+                            <td>0 years, 11 months, 30 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="result-chart-container">
+                <canvas id="roiChart"></canvas>
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+
+            <span>
+                <a href="roi-calculator.html">ROI Calculator</a>
+            </span>
+
+
+            <span>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </span>
+            <span>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </span>
+
+            <p>© 2024 Your Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="roi-calculator.js"></script>
+</body>
+
+</html>
